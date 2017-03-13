@@ -3,20 +3,16 @@
 
 $errors = '';
 //<-----Put Your email address here.
-if(empty($_POST['weddingDate']) || empty($_POST['ceremonyLocation']) || empty($_POST['groomEmail']) || empty($_POST['groomName']) )
+if(!empty($_POST['weddingDate']) || !empty($_POST['ceremonyLocation']) || !empty($_POST['groomEmail']) || !empty($_POST['groomName']) )
 {
-  $errors .= "\n Error: all fields are required";
-};
-
-
-if(isset($_POST['weddingDate']) || isset($_POST['ceremonyLocation']) || isset($_POST['groomEmail']) || isset($_POST['groomName']))
-{$weddingDate = $_POST['weddingDate'];
+ $weddingDate = $_POST['weddingDate'];
   $ceremonyLocation = $_POST['ceremonyLocation'];
   $groomEmail = $_POST['groomEmail'];
   $groomName = $_POST['groomName'];
 }else{
-  $errors .= "\n Error: Please fill in the empty fields";
-}
+   $errors .= "\n Error: all fields are required";
+};
+
 
 
   if (!preg_match(
